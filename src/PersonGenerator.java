@@ -2,18 +2,21 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import static java.nio.file.StandardOpenOption.CREATE;
 
 public class PersonGenerator {
     public static void main(String[] args) {
+        ArrayList <String> recs = new ArrayList<>();
         Scanner in = new Scanner(System.in);
         boolean doneInput = false;
         String ID = "";
         String fname = "";
         String lname = "";
         String title = "";
+        String rec = "";
         int yob = 0;
 
 
@@ -37,6 +40,14 @@ public class PersonGenerator {
         e.	YearOfBirth (an int)
         */
 
+        do {
+            ID = SafeInput.getNonZeroLenString(in, "Enter your ID 000001");
+            fname = SafeInput.getNonZeroLenString(in, "Enter your First Name");
+            lname = SafeInput.getNonZeroLenString(in, "Enter your Last Name");
+            title = SafeInput.getNonZeroLenString(in, "Enter your Title (Mr., Mrs., Ms., Dr., etc.)");
+            yob = SafeInput.getRangedInt(in, "Enter the year of your birth",1000,9999);
+        }while(!doneInput);
+
 
         try
         {
@@ -49,9 +60,9 @@ public class PersonGenerator {
 
             // Finally can write the file LOL!
 
-            for(String rec : recs)
+            for(String r : recs)
             {
-                writer.write(rec, 0, rec.length());  // stupid syntax for write rec
+                writer.write(r, 0, r.length());  // stupid syntax for write rec
                 // 0 is where to start (1st char) the write
                 // rec. length() is how many chars to write (all)
                 writer.newLine();  // adds the new line
