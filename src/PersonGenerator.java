@@ -2,17 +2,19 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Scanner;
 
 import static java.nio.file.StandardOpenOption.CREATE;
 
 public class PersonGenerator {
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
         boolean doneInput = false;
         String ID = "";
         String fname = "";
         String lname = "";
         String title = "";
-        String recs = "";
+        int yob = 0;
 
 
 
@@ -26,6 +28,15 @@ public class PersonGenerator {
         // Not sure if the toolkit is thread safe...
         File workingDirectory = new File(System.getProperty("user.dir"));
         Path file = Paths.get(workingDirectory.getPath() + "\\src\\data.txt");
+
+        /*
+        a.	ID (a String)
+        b.	FirstName
+        c.	LastName
+        d.	Title (a string like Mr., Mrs., Ms., Dr., etc.)
+        e.	YearOfBirth (an int)
+        */
+
 
         try
         {
