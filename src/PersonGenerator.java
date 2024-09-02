@@ -18,6 +18,7 @@ public class PersonGenerator {
         String title = "";
         String rec = "";
         int yob = 0;
+        String hello = "";
 
 
 
