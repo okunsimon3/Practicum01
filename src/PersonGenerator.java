@@ -12,8 +12,8 @@ public class PersonGenerator {
         String fname = "";
         String lname = "";
         String title = "";
-        int yob = 0;
         String recs = "";
+
 
 
 
