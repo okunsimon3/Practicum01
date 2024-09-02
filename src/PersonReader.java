@@ -62,6 +62,11 @@ public class PersonReader {
                 reader.close(); // must close the file to seal it and flush buffer
                 System.out.println("\n\nData file read!");
 
+                // Create neatly formatted display
+
+                System.out.println(String.format("%-7s %-24s %-24s %-7s %s", "ID#", "Firstname", "Lastname", "Title", "YOB"));
+                System.out.println("======================================================================");
+
                 // Now process the lines in the arrayList
                 // Split the line into the fields by using split with a comma
                 // use trim to remove leading and trailing spaces

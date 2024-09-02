@@ -30,7 +30,7 @@ public class PersonGenerator {
         // (may need to adjust for other IDE)
         // Not sure if the toolkit is thread safe...
         File workingDirectory = new File(System.getProperty("user.dir"));
-        Path file = Paths.get(workingDirectory.getPath() + "\\src\\data.txt");
+        Path file = Paths.get(workingDirectory.getPath() + "\\src\\PersonTestData.txt");
 
         /*
         a.	ID (a String)
@@ -46,6 +46,15 @@ public class PersonGenerator {
             lname = SafeInput.getNonZeroLenString(in, "Enter your Last Name");
             title = SafeInput.getNonZeroLenString(in, "Enter your Title (Mr., Mrs., Ms., Dr., etc.)");
             yob = SafeInput.getRangedInt(in, "Enter the year of your birth",1000,9999);
+
+            rec = ID + ", " + fname + ", " + lname + ", " + title + ", " + yob;
+
+            System.out.println(rec);
+
+            recs.add(rec);
+
+            doneInput = SafeInput.getYNConfirm(in, "Are you done?");
+
         }while(!doneInput);
 
 
